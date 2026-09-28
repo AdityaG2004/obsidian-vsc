@@ -408,7 +408,6 @@ obsidian-vscode/
 │
 ├── 📦 package.json
 ├── ⚙️ tsconfig.json
-├── 🚫 .vscodeignore
 │
 ├── .vscode/
 │   ├── launch.json
