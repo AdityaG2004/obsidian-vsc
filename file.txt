@@ -1,0 +1,107 @@
+SIMPLE SUMMARY: WHAT IS OBSIDIAN?
+-------------------------------------
+Obsidian is a notes app. You write notes in it (plain text files).
+The special thing: you can link notes to each other, like "[[Bug Note]]"
+inside another note, and click to jump between them.
+
+Think of it like your own personal Wikipedia for a project:
+- Write down anything (summary, ideas, bugs, decisions) as a note.
+- Link related notes together so they're easy to find later.
+- See a visual map (graph) of how everything connects.
+- It does NOT read your code or find bugs on its own — you write
+  everything yourself, it just helps you organize and connect it.
+
+That's it. A place to write and link notes, so your project knowledge
+doesn't get lost or scattered.
+
+WHAT IS THIS PROJECT ABOUT?
+-----------------------------
+This project is a VS Code extension. It lets you open your Obsidian notes
+inside VS Code and still get Obsidian's special features — clickable note
+links, backlinks, tags, and a visual graph — instead of just plain text.
+
+It doesn't create new files or copy anything. It works directly on your
+existing .md note files, the exact same ones Obsidian uses.
+
+WHAT PROBLEM IS IT TRYING TO SOLVE?
+--------------------------------------
+Normally you have to pick ONE app to get the good features:
+- Use Obsidian -> you get clickable links, backlinks, graph view.
+- Use VS Code -> you get a better editor, but your note links are just
+  dead text. No clicking, no backlinks, no graph.
+
+That's annoying if you want both: VS Code's editing power AND Obsidian's
+linking features, on the same notes.
+
+This project solves that by bringing Obsidian's linking features directly
+into VS Code, so you don't have to choose. Open the same notes in either
+app, edit in either one, and everything stays in sync automatically since
+it's literally the same files on disk.
+
+WHAT'S THE DIFFERENCE BETWEEN VS CODE AND OBSIDIAN?
+--------------------------------------------------------
+OBSIDIAN
+- An app made specifically for note-taking and connecting ideas.
+- Lets you type [[Note Name]] to link one note to another (like Wikipedia).
+- Shows backlinks (which notes link to the one you're viewing).
+- Shows a visual graph of how all your notes connect.
+- Not really meant for writing or editing code.
+
+VS CODE
+- An app made for writing and editing code (a code editor).
+- Has powerful editing tools, extensions, a built-in terminal, git support.
+- By default, has no idea what [[Note Name]] means — it just sees plain
+  text, so none of Obsidian's linking features work there.
+- Great if you're also coding, or just prefer its editor over Obsidian's.
+
+In short: Obsidian is built for linking notes together, VS Code is built
+for writing/editing text and code. This project takes Obsidian's linking
+features and adds them into VS Code, so one set of notes works well in
+both places.
+
+HOW DOES OBSIDIAN HELP WHILE WORKING ON A PROJECT?
+--------------------------------------------------------
+- Project notes in one place: keep meeting notes, design decisions, TODOs,
+  and bug notes as separate .md files instead of one giant messy doc.
+- Linking related notes: while debugging something related to an earlier
+  decision, type [[that note]] and the two are now connected — click to
+  jump between them instantly.
+- Backlinks show context automatically: open a note like "Auth Bug" and
+  Obsidian shows every other note that mentions or links to it (e.g.
+  "Sprint Planning", "API Design") — related context surfaces without
+  searching.
+- Graph view shows the big picture: a visual map of how all your notes,
+  decisions, and features connect, useful for seeing how organized (or
+  tangled) your project knowledge is.
+- Daily notes: a quick daily log of what you did/decided, which naturally
+  builds a searchable project journal over time.
+- Tags: mark notes as #bug, #idea, #todo, etc. and pull up everything with
+  that tag across the whole project.
+
+In short: instead of code comments or one README trying to hold everything,
+Obsidian becomes a linked knowledge base for the project — decisions, bugs,
+and ideas, and how they relate to each other, navigable visually. With this
+extension, you get all of that while still in VS Code coding, without
+switching apps.
+
+QUICK CHECK: SUMMARY OF WHAT OBSIDIAN DOES (AND DOESN'T DO)
+------------------------------------------------------------------
+When working on any project, Obsidian helps like this:
+
+- Keep project notes/summary in one place — YES. You can write a summary
+  of the project, meeting notes, decisions, TODOs, etc. as .md files, all
+  organized together in one vault instead of scattered docs.
+
+- "Shows" bugs — NOT automatically. Obsidian does NOT scan your code or
+  detect bugs by itself. What it does: YOU write a note about a bug (e.g.
+  "Auth Bug - token expires early"), and Obsidian helps you see that note,
+  link it to related notes, and find it again easily later. Think of it as
+  a place to track/organize bugs you already know about, not a bug finder.
+
+- Makes links between notes — YES. Typing [[Note Name]] connects one note
+  to another, so related notes (a bug, the feature it affects, the meeting
+  where it was discussed) are all clickable and connected to each other.
+
+So overall: Obsidian is a place to WRITE DOWN and CONNECT project
+knowledge (summaries, bugs, decisions, ideas) — not a tool that
+automatically detects things in your code.

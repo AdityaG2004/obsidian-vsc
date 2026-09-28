@@ -1,0 +1,95 @@
+{
+  "name": "obsidian-vscode-live",
+  "displayName": "Obsidian Vault Live Integration",
+  "description": "Live, two-way integration between an Obsidian vault and VS Code: wikilinks, backlinks, tags, graph view, live file watching.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other", "Visualization", "Notebooks"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "obsidianLive.openGraph",
+        "title": "Obsidian: Open Graph View"
+      },
+      {
+        "command": "obsidianLive.refreshIndex",
+        "title": "Obsidian: Rebuild Vault Index"
+      },
+      {
+        "command": "obsidianLive.createNote",
+        "title": "Obsidian: Create New Note"
+      },
+      {
+        "command": "obsidianLive.insertWikilink",
+        "title": "Obsidian: Insert Wikilink"
+      },
+      {
+        "command": "obsidianLive.openDailyNote",
+        "title": "Obsidian: Open Today's Daily Note"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "obsidianLive.backlinks",
+          "name": "Backlinks",
+          "when": "resourceExtname == .md"
+        },
+        {
+          "id": "obsidianLive.tags",
+          "name": "Vault Tags"
+        }
+      ]
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "obsidianLive.insertWikilink",
+          "group": "1_modification",
+          "when": "resourceExtname == .md"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Obsidian Vault Live",
+      "properties": {
+        "obsidianLive.vaultPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to the Obsidian vault. Leave empty to use the current workspace root."
+        },
+        "obsidianLive.dailyNoteFolder": {
+          "type": "string",
+          "default": "Daily",
+          "description": "Folder (relative to vault root) where daily notes are created."
+        },
+        "obsidianLive.attachmentFolder": {
+          "type": "string",
+          "default": "attachments",
+          "description": "Folder used when resolving ![[embeds]] to non-markdown files."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0",
+    "@vscode/vsce": "^2.24.0"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
